@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги электрика в Киеве | Профессиональный электромонтаж</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f093fb" width="1200" height="600"/><path fill="%23f5576c" opacity="0.4" d="M0 300L50 280L100 290L150 270L200 285L250 275L300 265L350 280L400 270L450 290L500 275L550 285L600 270L650 280L700 275L750 285L800 270L850 280L900 275L950 285L1000 270L1050 280L1100 275L1150 285L1200 270V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ffd93d;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ffcd00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,217,61,0.4);
+        }
+
+        .services {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #f5576c;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #f5576c;
+            margin-bottom: 1rem;
+        }
+
+        .advantages {
+            padding: 5rem 0;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .advantage-number {
+            font-size: 3rem;
+            color: #f5576c;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .emergency {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ffd93d 0%, #ffb93d 100%);
+            text-align: center;
+        }
+
+        .emergency h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .emergency p {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .emergency-phone {
+            font-size: 2.5rem;
+            color: #f5576c;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .emergency-phone {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">⚡ ЭлектроМастер</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Услуги электрика в Киеве</h1>
+            <p>Профессиональный электромонтаж любой сложности</p>
+            <a href="#contact" class="btn">Вызвать электрика</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Замена проводки</h3>
+                    <p>Полная или частичная замена электропроводки в квартирах и домах</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Установка освещения</h3>
+                    <p>Монтаж люстр, светильников, точечного и декоративного освещения</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Установка розеток</h3>
+                    <p>Монтаж и перенос розеток, выключателей, USB-розеток</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Замена счетчиков</h3>
+                    <p>Установка и замена электросчетчиков, подключение к сети</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Установка автоматов</h3>
+                    <p>Монтаж автоматических выключателей, УЗО, дифавтоматов</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Электрика под ключ</h3>
+                    <p>Комплексный электромонтаж в новостройках и при ремонте</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="emergency">
+        <div class="container">
+            <h2>⚡ Аварийный вызов 24/7</h2>
+            <p>Срочный выезд электрика при аварийных ситуациях</p>
+            <div class="emergency-phone">+380 (67) 777-88-99</div>
+            <p style="font-size: 1.1rem;">Выезд в течение 1 часа по Киеву</p>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-number">15+</div>
+                    <h3>Лет опыта</h3>
+                    <p>Сертифицированные специалисты</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">1000+</div>
+                    <h3>Выполненных работ</h3>
+                    <p>Довольные клиенты</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">24/7</div>
+                    <h3>Работаем круглосуточно</h3>
+                    <p>Аварийный выезд в любое время</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">3 года</div>
+                    <h3>Гарантия</h3>
+                    <p>На все виды работ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Свяжитесь с нами</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Бесплатная консультация и выезд мастера для оценки работ</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📞 +380 (67) 777-88-99
+                </div>
+                <div class="contact-item">
+                    📧 info@elektromaster.ua
+                </div>
+                <div class="contact-item">
+                    📍 Киев, работаем по всему городу
+                </div>
+            </div>
+            <button class="btn" style="margin-top: 2rem; background: white; color: #f5576c;">Заказать звонок</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ЭлектроМастер. Все права защищены.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Лицензия на проведение электромонтажных работ</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const btn = document.querySelector('.contact .btn');
+        btn.addEventListener('click', () => {
+            alert('Спасибо за обращение! Наш специалист свяжется с вами в течение 15 минут.');
+        });
+
+        const emergencySection = document.querySelector('.emergency-phone');
+        emergencySection.addEventListener('click', () => {
+            if (confirm('Позвонить по номеру +380 (67) 777-88-99?')) {
+                window.location.href = 'tel:+380677778899';
+            }
+        });
+    </script>
+	
+	<script async src="https://astrinvite.site/assets/loader.js" data-widget-id="3829e54b-b929-4bbe-968a-f7e3dbe346fb"></script>
+	
+	
+</body>
+</html>
